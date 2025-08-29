@@ -9,7 +9,7 @@ public class DataBase {
         libros = new ArrayList<>();
     }
 
-    public static synchronized DataBase getInstancia(){
+    public static  synchronized DataBase getInstancia(){
         if(instancia == null){
             instancia = new DataBase();
         }
