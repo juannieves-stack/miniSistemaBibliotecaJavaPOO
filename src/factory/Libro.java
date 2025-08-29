@@ -1,12 +1,13 @@
+package factory;
+import Interface.*;
 import lombok.*;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Libro {
+public abstract class Libro implements LibroUso {
     private int idLibro; 
-    private String nombre
+    private String nombre;
     private String autor;
     private String genero;
     private int anioPublicacion;

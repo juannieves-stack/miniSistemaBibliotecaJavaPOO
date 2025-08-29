@@ -1,3 +1,9 @@
+package factory;
+
+import lombok.Builder;
+
+@Builder
+
 public class LibroFisico extends Libro {
     public LibroFisico() {
         System.out.println("Libro Fisico creado... ");

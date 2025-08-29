@@ -1,3 +1,5 @@
+package factory;
+
 public class LibroDigital extends Libro {
     public int a;
     public LibroDigital() {

@@ -1,3 +1,5 @@
+package factory;
+
 public class LogicaLibro {
     public static Libro crearLibro(String tipo){
         try{
