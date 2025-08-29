@@ -1,31 +1,23 @@
+package singleton;
 import java.util.ArrayList;
 import java.util.List;
+import factory.Libro;
 
-public class DataBase {
-    private static DataBase instancia;
-    private List<Libro> libros;
+public enum DataBase {
+    INSTANCE; 
 
-    public DataBase() {
-        libros = new ArrayList<>();
-    }
+    private final List<Libro> libros = new ArrayList<>();
 
-    public static  synchronized DataBase getInstancia(){
-        if(instancia == null){
-            instancia = new DataBase();
-        }
-        return instancia;
-    }
-    public void agregarlibro(Libro libro){
-        if(libro!=null){
+    public void agregarLibro(Libro libro) {
+        if (libro != null) {
             libros.add(libro);
         }
     }
-//Devolvemos recorriendo el array cada posicion de c/libro
+
     public List<Libro> getLibros() {
-        //Eliminamos si ingresaron basura
-        libros.removeIf(lib -> lib == null);
+        libros.removeIf(lib -> lib == null); 
         System.out.println("+++++++++++++++++++++++");
-        for (Libro lib: libros){
+        for (Libro lib : libros) {
             System.out.println(lib);
         }
         return libros;
