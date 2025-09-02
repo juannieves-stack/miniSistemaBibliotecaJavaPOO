@@ -1,4 +1,10 @@
 package abstractFactory;
 
-public class UsuarioUI {
+import Interface.*;
+
+public class UsuarioUI implements InterfazUI {
+    @Override
+    public void mostrar() {
+        System.out.println("[UI] Vista de Usuario");
+    }
 }
