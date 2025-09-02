@@ -1,3 +1,4 @@
+import builder.Usuario;
 import factory.*;
 import singleton.*;
 public class Main {
@@ -21,7 +22,23 @@ public class Main {
     lib2.infoLibro();
     lib3.infoLibro();
     lib4.infoLibro();
+//builder
 
+        Usuario u1 = Usuario.builder()
+                .nombre("Bel")
+                .email("carmolu243@gmail.com")
+                .direccion("calle loc 34")
+                .build();
+
+        Usuario u2 = Usuario.builder()
+                .nombre("Carmen")
+                .email("carmen@gmail.com")
+
+                .direccion("Calle 123")
+                .build();
+
+        System.out.println(u1);
+        System.out.println(u2);
     }
 
 }
