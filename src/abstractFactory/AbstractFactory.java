@@ -5,6 +5,8 @@ import Interface.MetodoEnvio;
 
 public interface AbstractFactory {
     InterfazUI crearUI();
-    MetodoEnvio crearMetodoEnvio();
+    MetodoEnvio crearEnvioNormal();
+    MetodoEnvio crearEnvioExpress();
 }
+
 

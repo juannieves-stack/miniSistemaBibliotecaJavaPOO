@@ -7,6 +7,6 @@ public class EnvioNormal implements MetodoEnvio{
 
     @Override
     public void EnviarLibro(Libro libro) {
-        System.out.println("Se realiza un Envio normal, estimado dentro de  1 - 2 dias");
+        System.out.println("Se realiza un Envio normal, estimado dentro de  4 a 7 dias");
     }
 }
