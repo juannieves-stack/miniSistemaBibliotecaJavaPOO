@@ -1,8 +1,11 @@
+import Prototype.Prestamo;
 import builder.Usuario;
 import factory.*;
 import singleton.*;
 import abstractFactory.*;
 import Interface.*;
+
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
@@ -89,5 +92,22 @@ public class Main {
             System.out.println("Enviando libro como Admin con Envío Express:");
             envioExpressAdmin.EnviarLibro(libroParaAdmin);
         }
+        Prestamo p1 = Prestamo.builder()
+                .libro(lib1)
+                .usuario(u1)
+                .FechaInicio(LocalDate.now())
+                .FechaFin(LocalDate.now().plusDays(14))
+                .build();
+        p1.toString();
+
+        Prestamo prestamo1= p1.clone();
+        prestamo1.setUsuario(u2);
+
+        Prestamo prestamo2= p1.clone();
+        prestamo2.setFechaFin(LocalDate.now().plusDays(30));
+        System.out.println(prestamo1.getUsuario().getNombre());
+        System.out.println(p1.getUsuario().getNombre());
+        System.out.println(prestamo2.getFechaFin());
+        System.out.println(p1.getFechaFin());
     }
 }
