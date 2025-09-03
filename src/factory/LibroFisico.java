@@ -1,11 +1,9 @@
 package factory;
 
-import lombok.Builder;
-
-@Builder
-
 public class LibroFisico extends Libro {
-    public LibroFisico() {
+
+    public LibroFisico(String nombre, String autor) {
+        super(nombre, autor);
         System.out.println("Libro Fisico creado... ");
     }
 

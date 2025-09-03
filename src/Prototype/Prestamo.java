@@ -26,10 +26,10 @@ public class Prestamo implements Cloneable{
     @Override
     public String toString() {
         return "++++++++++++++++++++++++\nPrestamo{" +
-                "libro=" + libro +
-                ", usuario=" + usuario +
-                ", FechaInicio=" + FechaInicio +
-                ", FechaFin=" + FechaFin +
+                "libro=" + libro.getNombre()+
+                ", usuario=" + usuario.getNombre() +
+                ", FechaInicio=" + this.FechaInicio +
+                ", FechaFin=" + this.FechaFin +
                 '}';
     }
 }

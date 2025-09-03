@@ -11,12 +11,11 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("=== Factory Method: Creación de Libros ===");
-        Libro lib3 = LogicaLibro.crearLibro("Digital");
-        Libro lib4 = LogicaLibro.crearLibro("Fisico");
-        Libro lib5 = LogicaLibro.crearLibro("li"); // tipo inválido, devuelve null
-        Libro lib1 = new LibroDigital();
-        Libro lib2 = new LibroDigital();
-
+        Libro lib3 = LogicaLibro.crearLibro("Digital","Aprende Conmigo","AdventureStudio");
+        Libro lib4 = LogicaLibro.crearLibro("Fisico","Como amanecer cad dia","Julian Morris");
+        Libro lib5 = LogicaLibro.crearLibro("li","Entusiasmo","James Gessard"); // tipo inválido, devuelve null
+        Libro lib1 = new LibroDigital("Alquimia1","Vesperta A.");
+        Libro lib2 = new LibroDigital("Como armar muebles","GobiernoAyuda");
         System.out.println("=== Singleton: DataBase ===");
         DataBase data1 = DataBase.INSTANCE;
         System.out.println("Agregando libros a la DataBase...");
@@ -34,9 +33,8 @@ public class Main {
         lib2.infoLibro();
         if (lib3 != null) lib3.infoLibro();
         if (lib4 != null) lib4.infoLibro();
-        if (lib5 != null)
-
-            System.out.println("lib5 es null, no se puede mostrar info.");
+        if (lib5 != null) lib5.infoLibro();
+        System.out.println("lib5 es null, no se puede mostrar info.");
 
         // === Builder ===
         System.out.println("\n=== Builder: Usuario 1 ===");
@@ -98,13 +96,14 @@ public class Main {
                 .FechaInicio(LocalDate.now())
                 .FechaFin(LocalDate.now().plusDays(14))
                 .build();
-        p1.toString();
-
+        System.out.println(p1.toString());
         Prestamo prestamo1= p1.clone();
         prestamo1.setUsuario(u2);
 
         Prestamo prestamo2= p1.clone();
         prestamo2.setFechaFin(LocalDate.now().plusDays(30));
+
+        //Realizamos la comparacion entre el clon y el orginal
         System.out.println(prestamo1.getUsuario().getNombre());
         System.out.println(p1.getUsuario().getNombre());
         System.out.println(prestamo2.getFechaFin());
